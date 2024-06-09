@@ -37,7 +37,13 @@ html, body, body > div {
 .footer {
   flex-shrink: 0;
 }
-
+.sticky-bar {
+  position: sticky;
+  top: 0;
+  height: 20px;
+  background-color: yellow;
+  z-index: 100;
+}
 
 /*
   GLOBAL TAGS
@@ -99,7 +105,12 @@ h1 {
 .itemSelector {
   padding-top: 12px;
 }
-
+.debug-1 {
+  background-color: rgba(132, 255, 0, 0.5);
+}
+.debug-2 {
+  background-color: rgba(251, 10, 10, 0.354)
+}
 .d-pad {
   width: 120px;
   height: 120px;

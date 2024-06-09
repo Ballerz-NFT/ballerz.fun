@@ -71,7 +71,7 @@ export default function Designer() {
   const BallerIntro =({className, selectedBaller}) => {
     var bText=selectedBaller ?  "Customize your Baller": "Choose a Baller" 
     var bbText=selectedBaller ?  "The possibilities are endless make it your own.": "Select a Baller you want to customize." 
-
+    
     return(
       <div>
   
@@ -650,7 +650,7 @@ transform: "translate(-50%, -50%)"
           >
             Download
           </button>
-
+            <h6 style={{ fontSize: '8px' }}>cause Halloween doesn't last all year</h6>
           <ItemBlock src="/img/layers/accessories/5.png" width="100" height="100" ></ItemBlock>
         </div>
   </div>
