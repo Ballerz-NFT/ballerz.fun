@@ -26,6 +26,84 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.speech-bubble {
+  position: relative;
+  background: #ffffff;
+  border-radius: 0.4em;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: #ffffff;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+
+.spotlight {
+  background: linear-gradient(
+    to right,
+    #ff416c,
+    #ff4b2b,
+    #ff6a00,
+    #f7931e,
+    #f9d423
+  );
+  border-radius: 0.8em;
+  padding: 0.5em;
+}
+
+.signup {
+  background: #fff;
+  border-radius: 0.4em;
+}
+
+@media screen and (max-width: 530px) {
+  .signup {
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
