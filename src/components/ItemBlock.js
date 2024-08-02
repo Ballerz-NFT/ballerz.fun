@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useRef, useEffect,useState} from "react";
 
 import { motion } from "framer-motion"
-export default function ItemBlock({image,src,key,id, alt,width,height,className}) {
+export default function ItemBlock({key, src,id, alt,width,height,className}) {
     // console.log(image)
   
       function changeBackground(e) {
@@ -24,7 +24,7 @@ export default function ItemBlock({image,src,key,id, alt,width,height,className}
     onClick={shareInfo}
   >
         <img
-        key={`${key}`}
+        key={`${key}`} 
         id={`${id}`}
         src={`${src}`}
         alt={`${alt}`}

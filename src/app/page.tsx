@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="main">
     <div className="sticky-bar text-center" style={{ fontSize: '12px' }}> Ballerz Playground! </div>
-    <main className="flex min-h-screen flex-col items-center py-24 px-4">
+    <main className="flex flex-col items-center py-24 px-4">
       <header className="w-full text-center">
         <Image
           src="/img/logo.png"

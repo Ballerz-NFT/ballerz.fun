@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Designer from '@/components/Designer';
+import DesignerOld from '@/components/DesignerOld';
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   description: 'Customize your Ballerz with the Ballerz Designer Tool.',
 }
 import '@/styles/globals.css'
+import DesignerRedux from '@/components/DesignerRedux';
 
 export default function Dressup() {
   return (
@@ -14,7 +16,9 @@ export default function Dressup() {
 
     <main className="main">
      
-      <Designer />
+      {/* <DesignerRedux /> */}
+      <DesignerOld />
+      {/* <Designer /> */}
     </main>
 
 
