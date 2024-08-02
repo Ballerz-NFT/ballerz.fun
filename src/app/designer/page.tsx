@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Designer from '@/components/Designer';
+// import Designer from '@/components/Designer';
 import DesignerOld from '@/components/DesignerOld';
 import type { Metadata } from 'next'
 
@@ -16,9 +16,8 @@ export default function Dressup() {
 
     <main className="main">
      
-      {/* <DesignerRedux /> */}
       <DesignerOld />
-      {/* <Designer /> */}
+ 
     </main>
 
 
