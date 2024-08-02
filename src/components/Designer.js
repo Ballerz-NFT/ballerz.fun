@@ -129,6 +129,7 @@ export default function Designer() {
     {},
     ...layers.map((layer) => ({ [layer["slug"]]: 1 }))
   );
+
   function handleSelectedShiftMode(e){
     switch (selectedShiftMode){
       case "NONE":
@@ -160,14 +161,29 @@ export default function Designer() {
   function handleBackgrounds(e){
     var sLayer = 2
     setSelectedLayer(sLayer )
+
     const selectedItem = design[layers[sLayer ]["slug"]];
+
     const items = layers[sLayer ]["items"];
-    // console.log(" TARGET ID :",e.target.id, "  : " , items.length, " : " ,(e.target.id) % items.length )
-    setDesign({
+    console.log(" TARGET ID :",e.target.id, "  : " , items.length, " : " ,(e.target.id) % items.length ," >>>>> ", e.target.set , " :::: ", items[(e.target.id) % items.length]["set"])
+   
+   setDesign({
       ...design,
       [layers[sLayer ]["slug"]]:
-        items[(e.target.id) % items.length]["id"],
+      items[(e.target.id) % items.length]["id"],
     });
+    // setDesign({
+    //   ...design,
+    //   [layers[sLayer ]["slug"]]:
+    //   items[(e.target.id) % items.length]["id"],
+    // });
+    console.log(" design ", design) 
+    // setDesign({
+    //   ...design,
+    //   [`${layers[sLayer]["slug"]}${items[e.target.id % items.length]["set"]}${items[e.target.id % items.length]["id"]}`]:
+    //     items[e.target.id % items.length]["id"],
+    // });
+    // console.log()
     // console.log(items, " <<<< >>> ")
   }
   function handleAccessories(e){
@@ -360,6 +376,7 @@ export default function Designer() {
      all this big blocks
       into separate components */}
 {/* <LayerFeedback className="debug2"></LayerFeedback> */}
+
 <div className={selectedBaller ? "flex" : "hidden" }>   
             
   <div className="flex-auto w-64">
@@ -388,7 +405,7 @@ export default function Designer() {
               </option>
             ))}
           </select>
-
+          {/* <p className=""> MAKE IT HAPPEN </p> */}
           {/*-------------
             | SELECT ITEMS
             -------------*/}
@@ -416,8 +433,10 @@ export default function Designer() {
   <div className="flex-auto w-64 ">
 
   </div>
+  
 </div>
-<div className={selectedBaller ? "flex " : "hidden"}>   
+
+<div className={selectedBaller ? "flex" : "hidden"}>   
   <div className="flex-auto w-64 ">
   
   <p className="px-2">Borders</p>
@@ -430,44 +449,46 @@ export default function Designer() {
                 key={value}
                 onClick={handleBorders}>
                     <ItemBlock
-                    key={value}
+                    // key={value}
                     id={index}
                     src={`/img/layers/borders/${index}.png`}
                     width="100"
                     alt={`bord ${index}`}
                     height="100"
-                    className="border-0 bg-gradient-to-b from-indigo-50 to-white"
+                    className="border-0 bg-gradient-to-b from-indigo-50 to-white rounded-md"
                   />
               </div>
                   )}
                         
               </div>          
-    Backgrounds
+    Backgrounds Party
               <div  className="grid grid-cols-4 z-biggy ">
-              {layers[2]["items"].map((value, index) => 
-                <div
-                key={value}
-                onClick={handleBackgrounds}>
-                    <ItemBlock
-                    key={value}
-                    id={index}
-                    src={`/img/layers/backgrounds/${index}.png`}
-                    width="100"
-                    alt={`bg ${index}`}
-                    height="100"
-                    className="border-0"
-                  />
-        </div>
+              {layers[2]["items"].map((item, index) => 
+    <div
+      key={item.id}
+      onClick={handleBackgrounds}>
+        <div className="bg-pink-400"> {item.set} </div>
+        <ItemBlock
+
+          id={item.id}
+          src={`/img/layers/backgrounds/${item.set}/${index}.png`}
+          width="100"
+          alt={`bg ${item.set}- ${index}`}
+          title={`bg ${item.set}- ${index}`}
+          height="100"
+          className="border-0 rounded-md"
+        />
+    </div>
                   )}
                         
               </div>   
   </div>
-  <div className="flex-none w-[400px] ">
+  <div className="flex-none w-[400px] bg-green-500 sticky top-0">
  {/*----------
           | STAGE
           ----------*/}
-  
-  <div id="stage" className="overflow-hidden stage ">
+   
+  <div id="stage" className="overflow-hidden stage bg-red-500 sticky top-0">
   <motion.div
   animate={{
     x: 0,
@@ -655,6 +676,7 @@ transform: "translate(-50%, -50%)"
         </div>
   </div>
   <div className="flex-auto w-64 px-2 h-400 w-400">
+   
  <p className=""> Accessories </p>
   {/* 7777 */}
   <div  className="grid grid-cols-4 z-biggy ">
