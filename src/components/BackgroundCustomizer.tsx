@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { saveAs } from 'file-saver';
+// import { saveAs } from 'file-saver';
 
 interface Pattern {
   name: string;
@@ -159,7 +159,7 @@ const BackgroundCustomizer: React.FC = () => {
       </svg>
     `;
     const blob = new Blob([svg], { type: 'image/svg+xml;charset=utf-8' });
-    saveAs(blob, 'background.svg');
+    // saveAs(blob, 'background.svg');
   };
 
 
@@ -205,7 +205,7 @@ const BackgroundCustomizer: React.FC = () => {
             // Convert canvas to image and download
             canvas.toBlob((blob) => {
               if (blob) {
-                saveAs(blob, 'background_preview.png');
+                // saveAs(blob, 'background_preview.png');
               }
             });
           };
@@ -214,7 +214,7 @@ const BackgroundCustomizer: React.FC = () => {
           // If there's no baller image, download immediately
           canvas.toBlob((blob) => {
             if (blob) {
-              saveAs(blob, 'background_preview.png');
+              // saveAs(blob, 'background_preview.png');
             }
           });
         }
@@ -228,7 +228,7 @@ const BackgroundCustomizer: React.FC = () => {
           ctx.drawImage(ballerImage, imagePosition.x, imagePosition.y);
           canvas.toBlob((blob) => {
             if (blob) {
-              saveAs(blob, 'background_preview.png');
+              // saveAs(blob, 'background_preview.png');
             }
           });
         };
@@ -237,7 +237,7 @@ const BackgroundCustomizer: React.FC = () => {
         // If there's no baller image either, download immediately
         canvas.toBlob((blob) => {
           if (blob) {
-            saveAs(blob, 'background_preview.png');
+            // saveAs(blob, 'background_preview.png');
           }
         });
       }
