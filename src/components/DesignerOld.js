@@ -427,10 +427,10 @@ export default function DesigneOld() {
                 layers[0]["items"].map((value, index) => 
               // borderItems.map((value, index) => 
                 <div
-                key={value}
+                key={`${value.set}-${value.id}`}
                 onClick={handleBorders}>
                     <ItemBlock
-                    key={value}
+                    
                     id={index}
                     src={`/img/layers/borders/${index}.png`}
                     width="100"
@@ -512,8 +512,8 @@ export default function DesigneOld() {
 
   {
   layers.map((layer) => (
+    // key={layer}
     <img 
-  
       key={layer.id}
       src={`/img/layers/${layer.slug}/${design[layer.slug]}.png`}
       // src={`/img/layers/borders/${design[layer.slug]}.png`}
@@ -686,12 +686,13 @@ transform: "translate(-50%, -50%) ",
   <div  className="grid grid-cols-4 z-biggy ">
 
               {layers[1]["items"].map((value, index) => 
+              
                       <div
-                      key={value}
+                      key={`${value.set}-${value.id}`}
                       onClick={handleAccessories}>
                     <ItemBlock
 
-                    key={value}
+                    // key={value}
                     id={index}
                     src={`/img/layers/accessories/${index}.png`}
                     width="100"
