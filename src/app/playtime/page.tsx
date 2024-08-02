@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: 'Customize your Ballerz with the Ballerz Designer Tool.',
 }
 import '@/styles/globals.css'
-import DesignerRedux from '@/components/DesignerRedux';
-import BackgroundCustomizer from '@/components/BackgroundCustomizer';
+// import DesignerRedux from '@/components/DesignerRedux';
+// import BackgroundCustomizer from '@/components/BackgroundCustomizer';
 
 export default function Playtime() {
   return (
@@ -17,7 +17,7 @@ export default function Playtime() {
 
     <main className="main">
      
-    <BackgroundCustomizer />
+    {/* <BackgroundCustomizer /> */}
 
     </main>
 
