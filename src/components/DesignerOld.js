@@ -594,7 +594,7 @@ transform: "translate(-50%, -50%) ",
       <motion.button
             onClick={toggleStyle}
             type="button"
-            className="px-2 py-2 text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="px-2 py-2 rounded-md text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                whileHover={{ scale: 1}}
               whileTap={{ scale: 1.1 }}
               whileInView={{ scale:1 }}
@@ -605,7 +605,7 @@ transform: "translate(-50%, -50%) ",
               <motion.button
             // onClick={toggleStyle}
             type="button"
-            className="px-2 py-2 text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="px-2 py-2 rounded-md text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                whileHover={{ scale: 1}}
               whileTap={{ scale: 1.1 }}
               whileInView={{ scale:1 }}
@@ -626,7 +626,7 @@ transform: "translate(-50%, -50%) ",
               onMouseLeave={handleMouseLeave}
               className="flex items-center justify-center col-start-2 text-white bg-stone-500"
             >
-              <Triangle className="-rotate-90" />
+              <Triangle className="-rotate-90 rounded-md" />
           </motion.button>
           <motion.button
                whileHover={{ scale: 1.1}}
@@ -663,7 +663,7 @@ transform: "translate(-50%, -50%) ",
             >
               <Triangle className="rotate-90" />
               </motion.button>
-            
+         
           </div>
   
           {/*----------
@@ -676,7 +676,14 @@ transform: "translate(-50%, -50%) ",
           >
             Download
           </button>
-          
+         <div className="text-sm p-4 text-left"><span className="font-bold">Instructions:</span> Use the Toggle button to zoom in and out.<br/> <br/>The Shift button will allow you to select the baller, accessories or categories and items, then use the arrow buttons on the dpad to adjust that selection.
+         </div>
+         <div className="text-sm p-4 text-left">Click on backrounds, borders or accessories to add them to your Ballerz scene.
+         </div>
+         <div className="text-sm p-4 text-left">When you are happy, click the Download button to lock in that happiness.
+         </div>
+         <div className="text-sm p-4 font-bold">Play around, have fun.
+         </div>
           <ItemBlock src="/img/layers/accessories/5.png" width="100" height="100" ></ItemBlock>
         </div>
   </div>
